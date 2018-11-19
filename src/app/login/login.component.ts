@@ -16,38 +16,34 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  resetForm(form?:NgForm){
-    if(form!=null){
+  resetForm(form?: NgForm) {
+    if(form != null) {
       form.reset();
-      this.userLogin={
-        Username:'',
-        Password:''
-      }
+      this.userLogin = {
+        Username : '',
+        Password : ''
+      };
     }
-    
-      
   }
-  onSubmit(form:NgForm){
-    ///console.log(form.value);
-    if(form.value!=null){
-      
-      this.userService.loginUser(form.value).subscribe((data:any)=>{
+  onSubmit(form: NgForm){
+    // console.log(form.value);
+    if (form.value != null) {
+      this.userService.loginUser(form.value).subscribe((data: any) => {
         console.log(data);
-        if(data=='0'){
+        if(data == '0'){
           this.resetForm(form);
           this.toastr.success('User logged in!');
-        } else if(data=='1') {
+        } else if (data == '1') {
           this.toastr.error('Username or Password wrong!');
-        } else if(data=='2') {
+        } else if (data == '2') {
           this.toastr.error('No user found with this username!');
-        } else if(data=='3') {
+        } else if (data == '3') {
           this.toastr.warning('Please activate your account');
         } else {
           this.toastr.warning('No username found!');
         }
       });
     }
-    
   }
 
 }

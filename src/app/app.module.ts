@@ -14,6 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ActivationComponent } from './activation/activation.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 //import { MaterializeModule } from 'materialize-css';
 
@@ -25,7 +28,10 @@ import { ActivationComponent } from './activation/activation.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    ActivationComponent
+    ActivationComponent,
+    DashboardComponent,
+    SubscriptionsComponent,
+    SidebarComponent
 
   ],
   imports: [
