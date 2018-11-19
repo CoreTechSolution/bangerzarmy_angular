@@ -1,0 +1,54 @@
+<div class="wrapper2">
+    <div class="bannerslider">
+        <div>
+            <div class="slide_wrapper" style="background: url('assets/images/mainbanner.jpg') no-repeat;">
+                <div class="logo2"></div>
+                <div class="card mt-5 formS" style="margin:auto;width: 50%; margin: 30px auto;padding: 25px;">
+                  <h3>Registration</h3>
+                  <div  class="row">
+                    <form class="col s12" (ngSubmit)="onSubmit(UserRegistrationForm)" #UserRegistrationForm="ngForm" autocomplete="off">
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input id="FirstName" name="FirstName" type="text" class="validate" #FirstName="ngModel" [(ngModel)]="user.FirstName" required>
+                          <label data-error="" for="FirstName">First Name*</label>
+                          <span class="helper-text" data-error="First name should not be blank!"></span>
+                        </div>
+                        <div class="input-field col s6">
+                          <input id="LastName" name="LastName" type="text" class="validate" #LastName="ngModel" [(ngModel)]="user.LastName" required>
+                          <label for="LastName">Last Name*</label>
+                          <span class="helper-text" data-error="Last name should not be blank!"></span>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input id="Username" name="Username" type="text" class="validate" #Username="ngModel" [(ngModel)]="user.Username" required>
+                          <label for="Username">Username*</label>
+                          <span class="helper-text" data-error="Username should not be blank!"></span>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="Password" name="Password" type="password" class="validate" #Password="ngModel" [(ngModel)]="user.Password" required>
+                          <label for="Password">Password*</label>
+                          <span class="helper-text" data-error="Password name should not be blank!"></span>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="Email" name="Email" type="email" class="validate" #Email="ngModel" [(ngModel)]="user.Email" required>
+                          <label for="Email">Email*</label>
+                          <span class="helper-text" data-error="Enter a valid email!"></span>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <button class="btn waves-effect waves-light" [disabled]="!UserRegistrationForm.valid" type="submit" name="register" >Register
+                          <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
